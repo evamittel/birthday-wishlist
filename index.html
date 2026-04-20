@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eva’s 25th Birthday Wishlist 🎂</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #fff5f7;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    button {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .reserved {
+      background: grey;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🎉 Eva’s 25th Birthday Wishlist 🎁</h1>
+<p>Pick something you'd like to gift me 💖</p>
+
+<div class="grid" id="wishlist"></div>
+
+<script>
+const items = [
+  {
+    name: "Perfume",
+    link: "https://example.com",
+    image: "https://via.placeholder.com/200"
+  },
+  {
+    name: "Handbag",
+    link: "https://example.com",
+    image: "https://via.placeholder.com/200"
+  },
+  {
+    name: "Headphones",
+    link: "https://example.com",
+    image: "https://via.placeholder.com/200"
+  }
+];
+
+const container = document.getElementById("wishlist");
+
+// Load saved state
+let reservedItems = JSON.parse(localStorage.getItem("reserved")) || [];
+
+items.forEach((item, index) => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const isReserved = reservedItems.includes(index);
+
+  card.innerHTML = `
+    <img src="${item.image}" />
+    <h3>${item.name}</h3>
+    <a href="${item.link}" target="_blank">View Item</a><br>
+    <button onclick="reserve(${index})" class="${isReserved ? 'reserved' : ''}">
+      ${isReserved ? "Reserved 🎉" : "Reserve"}
+    </button>
+  `;
+
+  container.appendChild(card);
+});
+
+function reserve(index) {
+  if (!reservedItems.includes(index)) {
+    reservedItems.push(index);
+    localStorage.setItem("reserved", JSON.stringify(reservedItems));
+    location.reload();
+  }
+}
+</script>
+
+</body>
+</html>
