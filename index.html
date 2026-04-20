@@ -123,9 +123,6 @@ updateCountdown();
 
 // 🎁 WISHLIST DATA
 const data = [
-  {
-    category: "Footwear 👟 ",
-    items: [
       {
         name: "Theater Piggys",
         link: "https://theater.xyz/products/twiggy-piggies?variant=43880704835828",
@@ -141,11 +138,6 @@ const data = [
         link: "https://www.adidas.co.in/samba-og-shoes/ID0477.html?pr=product_rr&slot=3&rec=ds ",
         image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRw_amENluldek47GqtZY1emdlI0DADefhxPlqfE-QedOng1uIQCOsY7bqM1sNLlnFrKCIWeVjh2Ta3abrKl4kix_bUHieQJVsy6IxI-cWNBMs68NsAePTld1dp8xaEuAjtDHLvyLE&usqp=CAc"
       },
-    ]
-  },
-  {
-    category: "Skincare 🌸",
-    items: [
       {
     name: "Laneige Lip Mask ",
     link: "https://www.tirabeauty.com/product/laneige-lip-sleeping-mask-sweet-candy-ex-8-g-7607179",
@@ -161,19 +153,22 @@ const data = [
     link: "https://www.tirabeauty.com/product/maybelline-new-york-superstay-teddy-tint-lip-and-cheek-color-skinny-dip-5-ml-7605494",
     image:"https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1153313/nawuzZtglz-1153313_1.jpg "
       },
-    ]
-  },
-  {
-    category: "Electronics ⌚️",
-    items: [
       {
     name: "Airpods",
     link: "https://www.apple.com/in/shop/buy-airpods/airpods-4/with-active-noise-cancellation?fnode=2e538393d6d30a056c349096908f42750f4b6a352eb3d2288183b184b9038edc45b2c2cb4f1824de800c5a6332d7236320f0cf849dd2056d7aae3e6fa879c60827be846da966dd9dbfb198a62a4165e3d0fd041b5f168b37df26f34902b18038" ,
     image: "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-4-anc-select-202409_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=Qklmb1JJend3cVIxSUxIeFBIRk96cUNGMHVRUVpqOEFiUFU4R0xNRVFxdkhJa2hkRmxkTlJIMk9SdFNSaWFNODE1UUxLT2t0cW42N3FvQzVqaGhrVVcvdmFyQU52eG9rbk9Lb1pmQWN1MGgrYWpGdS9XeFgvbS9ITnNYOEhYaG4"
       },
-    ]
-  }
-];
+      {
+    name: "Accessories",
+    link: "https://i.pinimg.com/736x/19/d4/a4/19d4a44ed37f3a4d2fedb3b9cce2280f.jpg" ,
+    image: "https://i.pinimg.com/736x/19/d4/a4/19d4a44ed37f3a4d2fedb3b9cce2280f.jpg"
+      },
+      {
+    name: "💸💸",
+    link: "evamittel080@okicici" ,
+    image: "💸"
+      },
+        ]
 
 // 🎯 RESERVE SYSTEM
 let reserved = JSON.parse(localStorage.getItem("reserved")) || [];
